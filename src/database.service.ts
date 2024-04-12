@@ -1,3 +1,6 @@
+import { Injectable } from "@nestjs/common"
+
+@Injectable()
 export class DatabaseService{
     create(): string {
         return "This will create a record"
@@ -18,8 +21,7 @@ export class DatabaseService{
         return "This will delete a record"
     }
 
-    // Dynamic route to get details of a speciic record 
-    // readOne(@Param('id') id: string): string {
-    //     return `This action returns the dedails of record #${id}`;
-    // }
+    readOne(id: string): string {
+        return `This will show the dedails of record #${id}`;
+    }
 }

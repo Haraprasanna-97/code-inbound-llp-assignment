@@ -4,7 +4,7 @@ import { DatabaseService } from "./database.service";
 @Controller("CRUD")
 export class CRUDController {
 
-    public DBService : DatabaseService = new DatabaseService()
+    constructor(private DBService : DatabaseService) {}
 
     // create
     @Post("/create")
@@ -29,10 +29,9 @@ export class CRUDController {
     delete(): string {
         return this.DBService.delete()
     }
-
-    // Dynamic route to get details of a speciic record 
-    // @Get('/read/:id')
-    // readOne(@Param('id') id: string): string {
-    //     return `This action returns the dedails of record #${id}`;
-    // }
+    
+    @Get('/read/:id')
+    readOne(@Param('id') id: string): string {
+        return this.DBService.readOne(id);
+    }
 }
