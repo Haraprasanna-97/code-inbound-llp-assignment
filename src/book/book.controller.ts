@@ -1,13 +1,14 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from "@nestjs/common";
 import { bookService } from "./book.service";
 import { book } from "./data/book.dto";
+import { bookPipe } from "./custom pipes/book.pipe";
 
 @Controller("Book")
 export class BookController{
     constructor(private bookService : bookService) {}
     // create
     @Post("/add")
-    addbook(@Body() book : book) : String {
+    addbook(@Body(new bookPipe()) book : book) : String {
         return this.bookService.addbook(book)
     }
 
