@@ -14,7 +14,7 @@ export class bookPipe implements PipeTransform {
             errors.forEach(error => {
                 errormsgs.push(error.constraints);
             });
-            throw new BadRequestException(`validation failed ${JSON.stringify(errormsgs)}`)
+            throw new BadRequestException(`validation failed\n${JSON.stringify(errormsgs)}`)
         }
         console.log(value, typeof value);
         return value
