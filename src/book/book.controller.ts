@@ -36,14 +36,4 @@ export class BookController{
     findOne(@Param('id') bookId: string): string {
         return this.bookService.deletebook(bookId)
     }
-
-    @Post("/login")
-    @UseGuards(AuthGuard("local"))
-    login(@Request() req) : object {
-        let token = this.authService.generateToken(req.user)
-        return {
-            message : "Login successful",
-            userToken : token
-        }
-    }
 }

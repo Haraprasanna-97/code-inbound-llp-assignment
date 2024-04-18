@@ -15,10 +15,4 @@ export class RootController{
             "user Token" : token
         }
     }
-
-    @Get("/android-developer")
-    @UseGuards(AuthGuard("jwt"))
-    androidDeveloperData() : string {
-        return "This is a private data for android developer"
-    }
 }
