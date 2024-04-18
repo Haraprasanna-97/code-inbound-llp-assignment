@@ -26,8 +26,7 @@ export class UserService {
 
     // get user
     getUaerByUserName(username: string): User {
-        return this.users.find((user) => {
-            console.log(username);            
+        return this.users.find((user) => {            
             return user.username === username
         });
     }

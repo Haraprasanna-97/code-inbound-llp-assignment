@@ -16,7 +16,6 @@ export class bookPipe implements PipeTransform {
             });
             throw new BadRequestException(`validation failed\n${JSON.stringify(errormsgs)}`)
         }
-        console.log(value, typeof value);
         return value
     }
 

@@ -7,6 +7,7 @@ import { AuthGuard } from "@nestjs/passport";
 import { AuthService } from "src/auth/auth.service";
 
 @Controller("Book")
+@UseGuards(AuthGuard("jwt"))
 export class BookController{
     constructor(private readonly bookService : bookService, private readonly authService : AuthService) {}
 
