@@ -56,5 +56,7 @@ pids
 report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 
 
-# Custom Ugnores
+# Custom ignores
 /src/auth/constants.ts
+*.txt
+environments

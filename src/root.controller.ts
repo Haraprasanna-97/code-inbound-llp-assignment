@@ -10,7 +10,7 @@ export class RootController{
     @UseGuards(AuthGuard("local"))
     logiin(@Request() req) : object {
         let token = this.authService.generateToken(req.user)
-        return  {
+        return {
             message : "Login successful",
             "user Token" : token
         }
