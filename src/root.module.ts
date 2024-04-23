@@ -9,7 +9,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 @Module({
   imports: [BookModule, UserModule, AuthModule, ConfigModule.forRoot({
     isGlobal : true,
-    envFilePath : ["environments/.dbSettings.env","environments.appSetting.env"]
+    envFilePath : ["environments/.dbSettings.env"]
   }), TypeOrmModule.forRootAsync({
     imports: [ConfigModule],
     useFactory: (configService: ConfigService) => ({
